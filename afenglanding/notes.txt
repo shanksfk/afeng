@@ -1,0 +1,25 @@
+Steps for building the website using django
+
+1. Setup virtualenv
+    - python venv -m virtualenv
+    - to activate the virtualenv (namevenv/scripts/activate)
+    - pip install django
+
+2. start project and app
+    - django-admin startproject name
+    - python manage.py runserver
+    - python manage.py migrate
+    - django-admin startapp name #note: this must be inside the project folder alongside the manage.py file
+
+
+3. settings the project files structures
+    - create templates folder inside app folders and create index.html inside it
+    - inside html, use boilerplate, ensure language bottom is HTML not djangohtml
+    - set the project settings.py to include apps 
+    - set project/urls.py header to "include" and change required "include('app.urls')"
+    -  set app/urls.py header to "from . import vies" to import views.py
+    - set app/urls.py inside url to "('', views.index, name="index")"
+
+4. start writing html and css files
+    - after setting boiler plate, create css styles.css
+    - 

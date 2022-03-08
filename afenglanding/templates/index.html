@@ -1,0 +1,213 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AF Engineering - Civil and Structural Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="{%static 'afenglanding/css/style.css' %}" />
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="index.html"
+          ><img src="{%static 'afenglanding/images/logo.png' %}"
+        /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">SERVICES</a></li>
+            <li><a href="">QUOTE WITH US</a></li>
+            <li><a href="">CONTACT US</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="text-box">
+        <h1>Your dream, we realise it</h1>
+        <p>Consult with us for greatest engineering in your building</p>
+        <a href="" class="hero-btn">Visit Us To Know More</a>
+      </div>
+    </section>
+
+    <section class="service">
+      <h1>Services we offer</h1>
+      <p>our areas of expertises consists of these services</p>
+
+      <div class="row">
+        <div class="services-col">
+          <h3>CONCRETE STRUCTURE DESIGN</h3>
+          <p>
+            CONCRETE STRUCTURE DESIGN includes design of residential and
+            commercial complexes, shopping malls, high-rise buildings,
+            educational and institutional buildings, hotels, hospitals and
+            industrial buildings.
+          </p>
+        </div>
+        <div class="services-col">
+          <h3>STEEL STRUCTURE DESIGN</h3>
+          <p>
+            STEEL STRUCTURE DESIGN includes design of multi-storey buildings,
+            industrial buildings, factory sheds, warehouse, telecom towers and
+            entrance canopies.
+          </p>
+        </div>
+        <div class="services-col">
+          <h3>STRUCTURAL ANALYSIS AND CONSULTATIONS</h3>
+          <p>
+            It is often required to perform advance structural analysis for
+            optimization and value engineering purposes. Our team consists of
+            highly passionate and able to advice the best solutions.
+          </p>
+        </div>
+        <div class="services-col">
+          <h3>DETAILING SERVICES</h3>
+          <p>
+            We have a dedicated team of CAD detailers for preparation of
+            Technical Drawings for R.C.C and Steel Projects. Based on a template
+            and design data provided by the client, we are able to provide
+            top-notch quality technical drawings which the client can
+            confidently release for execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <h1>Our Skills and Highlights</h1>
+      <p>These are our lines of works and job involvements</p>
+      <div class="row">
+        <div class="skill-col">
+          <img src="{%static 'afenglanding/images/logo.png' %}" />
+          <div class="layer">
+            <h3>TECHNOLOGY</h3>
+          </div>
+        </div>
+        <div class="skill-col">
+          <img src="{%static 'afenglanding/images/logo.png' %}" />
+          <div class="layer">
+            <h3>ECONOMIC</h3>
+          </div>
+        </div>
+        <div class="skill-col">
+          <img src="{%static 'afenglanding/images/logo.png' %}" />
+          <div class="layer">
+            <h3>SUSTAINABLE</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+{%if name %}
+  
+    <h2>Thanks {{ message_name }}!</h2>
+    <p>We received your email and will respond shortly...</p>
+  
+  <br/><br/><br/>
+{% else %}
+    <section class="contactform">
+      <div class="wrapper">
+        <h2>Contact us</h2>
+        <div id="error_message"></div>
+        <form id="myform"  method="post" name="contact">
+          {% csrf_token %}
+          <div class="input_field">
+            <input type="text" placeholder="Name" id="name" />
+          </div>
+          <div class="input_field">
+            <input type="text" placeholder="Subject" id="subject" />
+          </div>
+          <div class="input_field">
+            <input type="text" placeholder="Phone" id="phone" />
+          </div>
+          <div class="input_field">
+            <input type="text" placeholder="Email" id="email" />
+          </div>
+          <div class="input_field">
+            <textarea placeholder="Message" id="message"></textarea>
+          </div>
+          <div class="btn">
+            <input type="submit" /><a href="google.com"></a>
+          </div>
+        </form>
+      </div>
+    </section>
+{%endif%}
+    <section class="footer">
+      <h4>Contact Us</h4>
+      <div class="icons">
+        <i class="fa fa-whatsapp">Whatsapp</i>
+        <i class="fa fa-twitter">Twitter</i>
+        <i class="fa fa-instagram">Twitter</i>
+        <i class="fa fa-facebook">Twitter</i>
+        <i class="fa fa-linkedin">Twitter</i>
+      </div>
+      <p>made by <a href="">Shanks</a></p></p>
+    </section>
+
+    <script>
+      var navLinks = document.getElementById('navLinks');
+      function showMenu() {
+        navLinks.style.right = '0';
+      }
+
+      function hideMenu() {
+        navLinks.style.right = '-200px';
+      }
+      function validate(){
+      var name = document.getElementById("name").value;
+      var subject = document.getElementById("subject").value;
+      var phone = document.getElementById("phone").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      var error_message = document.getElementById("error_message");
+      
+      error_message.style.padding = "10px";
+      
+      var text;
+      if(name.length < 5){
+        text = "Please Enter valid Name";
+        error_message.innerHTML = text;
+        alert("Form not Successfully!");
+        return false;
+      }
+      if(subject.length < 10){
+        text = "Please Enter Correct Subject";
+        error_message.innerHTML = text;
+        return false;
+      }
+      if(isNaN(phone) || phone.length != 10){
+        text = "Please Enter valid Phone Number";
+        error_message.innerHTML = text;
+        return false;
+      }
+      if(email.indexOf("@") == -1 || email.length < 6){
+        text = "Please Enter valid Email";
+        error_message.innerHTML = text;
+        return false;
+      }
+      if(message.length <= 140){
+        text = "Please Enter More Than 140 Characters";
+        error_message.innerHTML = text;
+        return false;
+      }
+      alert("Form Submitted Successfully!");
+      return true;
+    }
+    </script>
+  </body>
+</html>
