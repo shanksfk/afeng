@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1g_m8aw*9n^nl-ckaj3w#sv2y80vf2#b%xb7m32^0zmr8cuz_r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://afengi.herokuapp.com/']
 
 
 # Application definition
@@ -118,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [    BASE_DIR / "static",]
+STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -127,5 +127,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'shanksfk@gmail.com'
 EMAIL_HOST_PASSWORD = '30071993'
 EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False 
+# EMAIL_USE_SSL = False
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
